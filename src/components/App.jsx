@@ -2,6 +2,7 @@
 import ErrorBoundary from "./errorBoundariesExamples/ErrorBoundary"
 import { ErrorBound, BuggyCounter } from "./errorBoundariesExamples/ErrorBound";
 import { Clock } from "./ComponentLifecycle/Clock";
+import Article from "./ArticleList/Article";
 
 export const App = () => {
   return (
@@ -9,6 +10,7 @@ export const App = () => {
     <ErrorBoundary>
       <Clock />
     </ErrorBoundary>
+    <Article/>
     
     <Clock />
     <Clock />
