@@ -3,10 +3,41 @@ import ErrorBoundary from "./errorBoundariesExamples/ErrorBoundary"
 import { ErrorBound, BuggyCounter } from "./errorBoundariesExamples/ErrorBound";
 import { Clock } from "./ComponentLifecycle/Clock";
 import Article from "./ArticleList/Article";
+import UseState from "./Hooks/UseState";
+import UseEffect from "./Hooks/UseEffect";
+import { UseEffectUpdate, UseEffectUpdateMore } from "./Hooks/UseEffectUpdate";
+import { UseEffectMount } from "./Hooks/UseEffectMount";
+import { UseEffectUnmount } from "./Hooks/UseEffectUnmount";
+import { ComplexEffectHook } from "./Hooks/ComplexEffect";
+// import { MyComponent } from "./Hooks/customHooks/customHooks";
+// import { ComponentA, ComponentB } from "./Hooks/customHooks/customHooks";
+
 
 export const App = () => {
   return (
     <>
+    {/* <MyComponent/> */}
+    {/* <ComponentA/>
+    <ComponentB/> */}
+    <ComplexEffectHook/>
+    <br />
+    <br />
+    <UseEffectUnmount/>
+    <br />
+    <br />
+    <UseEffectMount/>
+    <br />
+    <br />
+    <UseEffectUpdateMore/>
+    <br />
+    <br />
+    <UseEffectUpdate/>
+    <br />
+    <br />
+    <UseEffect/>
+    <br />
+    <UseState/>
+    <br />
     <ErrorBoundary>
       <Clock />
     </ErrorBoundary>
