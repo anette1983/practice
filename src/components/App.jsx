@@ -9,16 +9,33 @@ import { UseEffectUpdate, UseEffectUpdateMore } from "./Hooks/UseEffectUpdate";
 import { UseEffectMount } from "./Hooks/UseEffectMount";
 import { UseEffectUnmount } from "./Hooks/UseEffectUnmount";
 import { ComplexEffectHook } from "./Hooks/ComplexEffect";
+import Page from "./Context/Page";
+import ProfilePage from "./Context/ProfilePage";
+import Images from './Context/Images'
+import Counter from "./Counter/Counter";
+import WeatherWidget from './WeatherWidget/WeatherWidget';
+import { UserContext } from "./Context/UserContext";
+import { User } from "./Context/User";
 // import { MyComponent } from "./Hooks/customHooks/customHooks";
 // import { ComponentA, ComponentB } from "./Hooks/customHooks/customHooks";
+
 
 
 export const App = () => {
   return (
     <>
+    <UserContext.Provider value={{ username: "Mango" }}>
+    <User/>
+    </UserContext.Provider>
+    {/* Нині значення контексту не динамічне.  */}
+    <WeatherWidget latitude='50.4500' longitude='30.5233'  />
+    <Counter/>
+    <Images/>
+    <ProfilePage/>
     {/* <MyComponent/> */}
     {/* <ComponentA/>
     <ComponentB/> */}
+    <Page/>
     <ComplexEffectHook/>
     <br />
     <br />
@@ -72,3 +89,4 @@ export const App = () => {
 };
 
 setInterval(App, 1000);
+
