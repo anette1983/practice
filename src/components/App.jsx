@@ -14,25 +14,58 @@ import ProfilePage from "./Context/ProfilePage";
 import Images from './Context/Images'
 import Counter from "./Counter/Counter";
 import WeatherWidget from './WeatherWidget/WeatherWidget';
-import { UserContext } from "./Context/UserContext";
+import { UserProvider } from "./Context/customProviderComponent/userContextCustom";
 import { User } from "./Context/User";
-// import { MyComponent } from "./Hooks/customHooks/customHooks";
+import { UseHover } from "./Hooks/customHooks/UseHover";
+import { UseToggleHook } from "./Hooks/customHooks/UseToggleHook";
+import { MyComponent } from "./Hooks/customHooks/customHooks";
+import { UseRef } from "./useRef/useRef";
+import { RenderPlayer } from "./useRef/Player";
 // import { ComponentA, ComponentB } from "./Hooks/customHooks/customHooks";
+import '../index.css'
+import { ForwardRef } from "./useRef/forwardRef";
+import { UseMemo } from "./useMemo/useMemo";
+import Checkboxes from "./Checkboxes/Checkboxes";
+import { Form } from "./Forms/Form";
 
 
 
 export const App = () => {
   return (
     <>
-    <UserContext.Provider value={{ username: "Mango" }}>
+    <Form/>
+    <br />
+    <br />
+    <Checkboxes/>
+    <br />
+    <br />
+    <UseMemo/>
+    <br />
+    <br />
+    <ForwardRef/>
+    <br />
+    <br />
+    <div className="player-wrapper"><RenderPlayer/></div >
+      <br />
+    <br />
+    <UseRef/>
+      <br />
+    <br />
+    <UseToggleHook/>
+    <br />
+    <br />
+    <UseHover/>
+    <br />
+    <br />
+    <UserProvider>
     <User/>
-    </UserContext.Provider>
+    </UserProvider>
     {/* Нині значення контексту не динамічне.  */}
     <WeatherWidget latitude='50.4500' longitude='30.5233'  />
     <Counter/>
     <Images/>
     <ProfilePage/>
-    {/* <MyComponent/> */}
+    <MyComponent/> 
     {/* <ComponentA/>
     <ComponentB/> */}
     <Page/>
