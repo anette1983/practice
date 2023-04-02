@@ -60,14 +60,18 @@ import { useState, useMemo } from "react";
 //   Щоразу коли зміниться стан clicks або проп someProp, компонент буде відрендерен повторно, що призведе до обчислення filteredPlanets, хоча значення planets та query не змінилися! Оскільки метод filter поверне посилання на новий масив, React сприйме це як абсолютно нові дані та список планет буде відмальовано заново. У такому разі варто мемоізувати обчислення filteredPlanets.
 
 export const UseMemo = ({ someProp }) => {
-    const [planets, setPlanets] = useState(["Earth", "Mars", "Jupiter", "Venus"]);
-    const [query, setQuery] = useState("");
+  // eslint-disable-next-line
+    const [planets, setPlanets] = useState(["Earth", "Mars", "Jupiter", "Venus"]); 
+    // eslint-disable-next-line
+    const [query, setQuery] = useState(""); 
     const [clicks, setClicks] = useState(0);
+
   
     const filteredPlanets = useMemo(
       () => planets.filter(planet => planet.includes(query)),
       [planets, query]
     );
+    
   
     return (
       <div>
