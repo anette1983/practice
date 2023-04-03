@@ -29,6 +29,7 @@ import { ForwardRef } from "./useRef/forwardRef";
 import { UseMemo } from "./useMemo/useMemo";
 import Checkboxes from "./Checkboxes/Checkboxes";
 import { Form } from "./Forms/Form";
+import { Redux } from "./Redux/RComponents/Redux";
 
 
 
@@ -37,6 +38,9 @@ export const App = () => {
     <>
     <Tabs>
     <TabList>
+      <Tab>
+                <h2>Redux</h2>
+              </Tab>
               <Tab>
                 <h2>Form</h2>
               </Tab>
@@ -116,6 +120,7 @@ export const App = () => {
                 <h2>Other</h2>
               </Tab>
             </TabList>
+            <TabPanel><Redux/></TabPanel>
       <TabPanel><Form/></TabPanel>
       <TabPanel><Checkboxes/></TabPanel>
       <TabPanel><UseMemo/></TabPanel>
