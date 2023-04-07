@@ -6,15 +6,22 @@ import './index.css';
 import { Provider } from 'react-redux';
 import { ThemeProvider } from 'styled-components';
 import { theme } from '../src/components/ReduxToolkitLogin/constants/theme';
+
+import { PersistGate } from 'redux-persist/integration/react';
 // import { store } from './components/Redux/redux/store';
 import { store } from './components/ReduxToolkit/redux/store';
+import { persistor } from 'components/ReduxToolkit/redux/store';
+// стор і персістор мають бути з одного файлу!
+// import { store } from './components/Redux-persist/redux/store';
 // import { store } from './components/ReduxToolkitLogin/redux/store';
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <BrowserRouter basename="/practice">
       <ThemeProvider theme={theme}>
         <Provider store={store}>
-          <App />
+          <PersistGate loading={null} persistor={persistor}>
+            <App />
+          </PersistGate>
         </Provider>
       </ThemeProvider>
     </BrowserRouter>

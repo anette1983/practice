@@ -31,12 +31,20 @@ import { Form } from './Forms/Form';
 import { Redux } from './Redux/RComponents/Redux';
 import { ReduxToolkit } from './ReduxToolkit/RComponents/ReduxToolkit';
 import { ReduxToolkitLogin } from './ReduxToolkitLogin/ReduxToolkitLogin';
+import { ReduxPersist } from './Redux-persist/RComponents/ReduxPersist';
+import { ReduxPersistTodos } from './ReduxPersistTodos/RComponents/ReduxPersistTodos';
 
 export const App = () => {
   return (
     <>
       <Tabs>
         <TabList>
+          <Tab>
+            <h2>Todos with ReduxPersist</h2>
+          </Tab>
+          <Tab>
+            <h2>ReduxPersist</h2>
+          </Tab>
           <Tab>
             <h2>ReduxToolkitLogin</h2>
           </Tab>
@@ -125,6 +133,12 @@ export const App = () => {
             <h2>Other</h2>
           </Tab>
         </TabList>
+        <TabPanel>
+          <ReduxPersistTodos />
+        </TabPanel>
+        <TabPanel>
+          <ReduxPersist />
+        </TabPanel>
         <TabPanel>
           <ReduxToolkitLogin />
         </TabPanel>
