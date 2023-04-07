@@ -32,7 +32,9 @@ import { Redux } from './Redux/RComponents/Redux';
 import { ReduxToolkit } from './ReduxToolkit/RComponents/ReduxToolkit';
 import { ReduxToolkitLogin } from './ReduxToolkitLogin/ReduxToolkitLogin';
 import { ReduxPersist } from './Redux-persist/RComponents/ReduxPersist';
-import { ReduxPersistTodos } from './ReduxPersistTodos/RComponents/ReduxPersistTodos';
+import { PersistTodos } from './persist-todos/RComponents/PersistTodos';
+import UseTime from './UseTime/UseTime';
+import { GoMerchStore } from './GoMerchStore/components/GoMerchStore';
 
 export const App = () => {
   return (
@@ -59,6 +61,9 @@ export const App = () => {
           </Tab>
           <Tab>
             <h2>Checkboxes</h2>
+          </Tab>
+          <Tab>
+            <h2>GoMerch Store</h2>
           </Tab>
           <Tab>
             <h2>UseMemo</h2>
@@ -92,6 +97,9 @@ export const App = () => {
           </Tab>
           <Tab>
             <h2>ProfilePage</h2>
+          </Tab>
+          <Tab>
+            <h2>UseTime</h2>
           </Tab>
           <Tab>
             <h2>Other</h2>
@@ -134,7 +142,7 @@ export const App = () => {
           </Tab>
         </TabList>
         <TabPanel>
-          <ReduxPersistTodos />
+          <PersistTodos />
         </TabPanel>
         <TabPanel>
           <ReduxPersist />
@@ -153,6 +161,9 @@ export const App = () => {
         </TabPanel>
         <TabPanel>
           <Checkboxes />
+        </TabPanel>
+        <TabPanel>
+          <GoMerchStore />
         </TabPanel>
         <TabPanel>
           <UseMemo />
@@ -193,6 +204,9 @@ export const App = () => {
         </TabPanel>
         <TabPanel>
           <ProfilePage />
+        </TabPanel>
+        <TabPanel>
+          <UseTime />
         </TabPanel>
         <TabPanel>
           <MyComponent />{' '}
