@@ -5,6 +5,11 @@ export default function SculptureGallery() {
   const [index, setIndex] = useState(0);
 
   function handleClick() {
+    if (index + 1 === sculptureList.length) {
+      return;
+    }
+    // або у кнопці: disabled={index + 1 === sculptureList.length}>
+
     setIndex(index + 1);
   }
 

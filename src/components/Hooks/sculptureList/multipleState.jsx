@@ -7,6 +7,13 @@ export default function SculptireGalleryM() {
   const [showMore, setShowMore] = useState(false);
 
   function handleNextClick() {
+    // if (index + 1 === sculptureList.length) {
+    //   return;
+    // }
+    if (index + 1 === sculptureList.length) {
+      return setIndex(0);
+    }
+    // або у кнопці: disabled={index + 1 === sculptureList.length}>
     setIndex(index + 1);
   }
 
