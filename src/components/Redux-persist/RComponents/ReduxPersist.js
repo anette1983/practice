@@ -19,6 +19,7 @@ import { getClicksValue } from '../redux/clicksSlice';
 export const ReduxPersist = () => {
   const dispatch = useDispatch();
   // const numberOfClicks = useSelector(state => state.clicks.value);
+
   const numberOfClicks = useSelector(getClicksValue);
   return (
     <div>

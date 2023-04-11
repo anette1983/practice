@@ -35,12 +35,26 @@ import { ReduxPersist } from './Redux-persist/RComponents/ReduxPersist';
 import { PersistTodos } from './persist-todos/RComponents/PersistTodos';
 import UseTime from './UseTime/UseTime';
 import { GoMerchStore } from './GoMerchStore/components/GoMerchStore';
+import { Prevent } from './prevent-component-render/Prevent';
+import { LoginControl } from './prevent-component-render/conditionRender';
+import { element } from './embedding-expressions-in-jsx/embexp';
+import { Clock1 } from './embedding-expressions-in-jsx/timer-inner-state/Clock1';
+import SculptureGallery from './Hooks/sculptureList/SculptureGallery';
+import SculptireGalleryM from './Hooks/sculptureList/multipleState';
+import { Reader } from './Reader/Reader';
+import publications from './Reader/publications.json';
 
 export const App = () => {
   return (
     <>
       <Tabs>
         <TabList>
+          <Tab>
+            <h2>Conditional rendering</h2>
+          </Tab>
+          <Tab>
+            <h2>Prevent component render</h2>
+          </Tab>
           <Tab>
             <h2>Todos with ReduxPersist</h2>
           </Tab>
@@ -122,8 +136,15 @@ export const App = () => {
           <Tab>
             <h2>Other</h2>
           </Tab>
+
           <Tab>
             <h2>Other</h2>
+          </Tab>
+          <Tab>
+            <h2>UseState Gallery</h2>
+          </Tab>
+          <Tab>
+            <h2>Reader</h2>
           </Tab>
           <Tab>
             <h2>Other</h2>
@@ -135,12 +156,18 @@ export const App = () => {
             <h2>Other</h2>
           </Tab>
           <Tab>
-            <h2>Other</h2>
+            <h2>Таймери, вбудовані вирази</h2>
           </Tab>
           <Tab>
             <h2>Other</h2>
           </Tab>
         </TabList>
+        <TabPanel>
+          <LoginControl />
+        </TabPanel>
+        <TabPanel>
+          <Prevent />
+        </TabPanel>
         <TabPanel>
           <PersistTodos />
         </TabPanel>
@@ -236,6 +263,13 @@ export const App = () => {
           <UseEffect />
         </TabPanel>
         <TabPanel>
+          <SculptureGallery />
+          <SculptireGalleryM />
+        </TabPanel>
+        <TabPanel>
+          <Reader items={publications} />
+        </TabPanel>
+        <TabPanel>
           <UseState />
         </TabPanel>
         <TabPanel>
@@ -250,6 +284,11 @@ export const App = () => {
         <TabPanel>
           <Clock />
           <Clock />
+          <div>
+            <p>Вбудовані вирази (embedding expressions)</p>
+            {element}
+          </div>
+          <Clock1 />
         </TabPanel>
 
         <TabPanel>
