@@ -4,6 +4,8 @@ import { GlobalStyle } from './GlobalStyle';
 import { Layout } from './Layout/Layout';
 import initialRecipes from '../Forms/recipes.json';
 import { RecipeForm } from './RecipeForm/RecipeForm';
+import { MyForm } from './MyForm';
+import EditPost from './MyFormReading';
 
 export class Form extends Component {
   state = {
@@ -32,6 +34,8 @@ export class Form extends Component {
         <RecipeForm onSave={this.addRecipe} />
         <RecipeList items={this.state.recipes} onDelete={this.deleteRecipe} />
         <GlobalStyle />
+        <MyForm />
+        <EditPost />
       </Layout>
     );
   }

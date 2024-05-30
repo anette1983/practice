@@ -8,6 +8,7 @@
 import { configureStore } from '@reduxjs/toolkit';
 import { tasksReducer } from './tasksSlice';
 import { filtersReducer } from './filtersSlice';
+import { tasksAsyncReducer } from '../../ReduxAsync/redux/tasksSlice';
 import { userSlice } from 'components/ReduxToolkitLogin/redux/userSlice';
 // import { clicksSlice } from '../../Redux-persist/redux/clicksSlice';
 // import { persistStore } from 'redux-persist';
@@ -25,6 +26,7 @@ import {
 export const store = configureStore({
   reducer: {
     tasks: tasksReducer,
+    tasksAsync: tasksAsyncReducer,
     filters: filtersReducer,
     user: userSlice.reducer,
     // clicks: clicksSlice.reducer,

@@ -8,10 +8,17 @@ import { ThemeProvider } from 'styled-components';
 import { theme } from '../src/components/ReduxToolkitLogin/constants/theme';
 
 import { PersistGate } from 'redux-persist/integration/react';
+//стор для редакс:
 // import { store } from './components/Redux/redux/store';
+// стор для реакдс тулкит и редакс персист (основной):
 import { store } from './components/ReduxToolkit/redux/store';
+
+// стор для редакс асинк:
+// import { store } from './components/ReduxAsync/redux/store';
+
 import { persistor } from 'components/ReduxToolkit/redux/store';
-// стор і персістор мають бути з одного файлу!
+
+//* стор і персістор мають бути з одного файлу!
 // import { store } from './components/Redux-persist/redux/store';
 // import { store } from './components/ReduxToolkitLogin/redux/store';
 ReactDOM.createRoot(document.getElementById('root')).render(

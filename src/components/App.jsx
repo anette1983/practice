@@ -43,6 +43,8 @@ import SculptureGallery from './Hooks/sculptureList/SculptureGallery';
 import SculptireGalleryM from './Hooks/sculptureList/multipleState';
 import { Reader } from './Reader/Reader';
 import publications from './Reader/publications.json';
+import { ReduxAsync } from './ReduxAsync/components/ReduxAsync';
+import ContextThemeToggle from './ContextThemeToggle/ContextThemeToggle';
 
 export const App = () => {
   return (
@@ -50,13 +52,16 @@ export const App = () => {
       <Tabs>
         <TabList>
           <Tab>
+            <h2>ReduxAsync</h2>
+          </Tab>
+          <Tab>
             <h2>Conditional rendering</h2>
           </Tab>
           <Tab>
             <h2>Prevent component render</h2>
           </Tab>
           <Tab>
-            <h2>Todos with ReduxPersist</h2>
+            <h2>Todos with ReduxPersist WIP</h2>
           </Tab>
           <Tab>
             <h2>ReduxPersist</h2>
@@ -161,7 +166,13 @@ export const App = () => {
           <Tab>
             <h2>Other</h2>
           </Tab>
+          <Tab>
+            <h2>ContextThemeToggle</h2>
+          </Tab>
         </TabList>
+        <TabPanel>
+          <ReduxAsync />
+        </TabPanel>
         <TabPanel>
           <LoginControl />
         </TabPanel>
@@ -325,6 +336,9 @@ export const App = () => {
               <BuggyCounter />
             </ErrorBound>
           </div>
+        </TabPanel>
+        <TabPanel>
+          <ContextThemeToggle />
         </TabPanel>
       </Tabs>
     </>
