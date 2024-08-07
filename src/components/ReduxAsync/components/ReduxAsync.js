@@ -17,6 +17,7 @@ export const ReduxAsync = () => {
       {isLoading && <p>Loading tasks...</p>}
       {error && <p>{error}</p>}
       <p>{items.length > 0 && JSON.stringify(items, null, 2)}</p>
+      {/* нал - включить все свойства, 2 - параметр спейс, дает отступы и переносы, красивое форматирование для читаемости */}
     </div>
   );
 };

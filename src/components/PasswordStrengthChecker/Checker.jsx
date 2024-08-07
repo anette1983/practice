@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useMemo } from 'react';
 import {
   hasNumber,
   hasUpperCase,
@@ -10,10 +10,10 @@ import styles from './Checker.module.css';
 export default function Checker() {
   const [password, setPassword] = useState('');
   const [strength, setStrength] = useState(0);
-  const [progressBarStyles, setProgressBarStyles] = useState({
-    width: '10%',
-    backgroundColor: 'transparent',
-  });
+  // const [progressBarStyles, setProgressBarStyles] = useState({
+  //   width: '10%',
+  //   backgroundColor: 'transparent',
+  // });
 
   const handlePasswordChange = e => {
     const {
@@ -22,53 +22,88 @@ export default function Checker() {
     setPassword(value);
   };
 
-  useEffect(() => {
-    //calculate strength
-    //calculate progress bar styles based on strength
-    //strength = length + charactertype
+  // useEffect(() => {
+  //   //calculate strength
+  //   //calculate progress bar styles based on strength
+  //   //strength = length + charactertype
 
-    const updatedProgressBarStyles = {
+  //   const updatedProgressBarStyles = {
+  //     backgroundColor: 'red',
+  //   };
+
+  //   let totalStrength = 0;
+
+  //   if (password.length >= 3) {
+  //     const strengthByLength = Math.min(6, Math.floor(password.length / 3)); // 1, 2, 3, 4, 5, 6 Max 6
+  //     let strengthByCharacterType = 0;
+
+  //     if (hasNumber.test(password)) {
+  //       strengthByCharacterType += 1;
+  //     }
+
+  //     if (hasUpperCase.test(password)) {
+  //       strengthByCharacterType += 1;
+  //     }
+
+  //     if (hasLowerCase.test(password)) {
+  //       strengthByCharacterType += 1;
+  //     }
+
+  //     if (hasSpecialCharacters.test(password)) {
+  //       strengthByCharacterType += 1;
+  //     }
+
+  //     totalStrength = strengthByLength + strengthByCharacterType;
+  //   } else {
+  //     totalStrength = 0;
+  //   }
+
+  //   updatedProgressBarStyles.width = `${totalStrength * 10}%`;
+
+  //   if (totalStrength > 8) {
+  //     updatedProgressBarStyles.backgroundColor = 'green';
+  //   } else if (totalStrength > 6) {
+  //     updatedProgressBarStyles.backgroundColor = 'orange';
+  //   }
+
+  //   setStrength(totalStrength);
+  //   setProgressBarStyles(updatedProgressBarStyles);
+  // }, [password]);
+
+  const calculateStrength = password => {
+    if (password.length < 3) return 0;
+
+    const strengthByLength = Math.min(6, Math.floor(password.length / 3)); // Max 6
+    const strengthByCharacterType = [
+      hasNumber.test(password),
+      hasUpperCase.test(password),
+      hasLowerCase.test(password),
+      hasSpecialCharacters.test(password),
+    ].filter(Boolean).length;
+
+    return strengthByLength + strengthByCharacterType;
+  };
+
+  const progressBarStyles = useMemo(() => {
+    const totalStrength = calculateStrength(password);
+    const styles = {
+      width: `${totalStrength * 10}%`,
       backgroundColor: 'red',
     };
 
-    let totalStrength = 0;
-
-    if (password.length >= 3) {
-      const strengthByLength = Math.min(6, Math.floor(password.length / 3)); // 1, 2, 3, 4, 5, 6 Max 6
-      let strengthByCharacterType = 0;
-
-      if (hasNumber.test(password)) {
-        strengthByCharacterType += 1;
-      }
-
-      if (hasUpperCase.test(password)) {
-        strengthByCharacterType += 1;
-      }
-
-      if (hasLowerCase.test(password)) {
-        strengthByCharacterType += 1;
-      }
-
-      if (hasSpecialCharacters.test(password)) {
-        strengthByCharacterType += 1;
-      }
-
-      totalStrength = strengthByLength + strengthByCharacterType;
-    } else {
-      totalStrength = 0;
-    }
-
-    updatedProgressBarStyles.width = `${totalStrength * 10}%`;
-
     if (totalStrength > 8) {
-      updatedProgressBarStyles.backgroundColor = 'green';
+      styles.backgroundColor = 'green';
     } else if (totalStrength > 6) {
-      updatedProgressBarStyles.backgroundColor = 'orange';
+      styles.backgroundColor = 'orange';
     }
 
-    setStrength(totalStrength);
-    setProgressBarStyles(updatedProgressBarStyles);
+    return styles;
   }, [password]);
+
+  useEffect(() => {
+    setStrength(calculateStrength(password));
+  }, [password]);
+
   return (
     <div>
       <h1>Password Strength Checker</h1>
