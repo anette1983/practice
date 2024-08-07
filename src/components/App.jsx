@@ -45,6 +45,7 @@ import { Reader } from './Reader/Reader';
 import publications from './Reader/publications.json';
 import { ReduxAsync } from './ReduxAsync/components/ReduxAsync';
 import ContextThemeToggle from './ContextThemeToggle/ContextThemeToggle';
+import Checker from './PasswordStrengthChecker/Checker';
 
 export const App = () => {
   return (
@@ -168,6 +169,9 @@ export const App = () => {
           </Tab>
           <Tab>
             <h2>ContextThemeToggle</h2>
+          </Tab>
+          <Tab>
+            <h2>Password strength check</h2>
           </Tab>
         </TabList>
         <TabPanel>
@@ -339,6 +343,9 @@ export const App = () => {
         </TabPanel>
         <TabPanel>
           <ContextThemeToggle />
+        </TabPanel>
+        <TabPanel>
+          <Checker />
         </TabPanel>
       </Tabs>
     </>
