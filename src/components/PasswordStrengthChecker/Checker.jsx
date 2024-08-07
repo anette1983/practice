@@ -84,6 +84,8 @@ export default function Checker() {
     return strengthByLength + strengthByCharacterType;
   };
 
+  // Почему максимальное значение — 6?
+  // Балансировка с типами символов: Мы также оцениваем наличие чисел, заглавных и строчных букв, а также специальных символов, что добавляет до 4 баллов. В сумме длина и типы символов могут давать максимум 10 баллов (6 за длину + 4 за типы символов), что удобно для оценки в шкале от 0 до 10.
   const progressBarStyles = useMemo(() => {
     const totalStrength = calculateStrength(password);
     const styles = {
