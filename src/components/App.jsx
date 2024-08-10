@@ -46,12 +46,16 @@ import publications from './Reader/publications.json';
 import { ReduxAsync } from './ReduxAsync/components/ReduxAsync';
 import ContextThemeToggle from './ContextThemeToggle/ContextThemeToggle';
 import Checker from './PasswordStrengthChecker/Checker';
+import MyButton from './MyButton/MyButton';
 
 export const App = () => {
   return (
     <>
       <Tabs>
         <TabList>
+          <Tab>
+            <h2>Button</h2>
+          </Tab>
           <Tab>
             <h2>ReduxAsync</h2>
           </Tab>
@@ -174,6 +178,9 @@ export const App = () => {
             <h2>Password strength check</h2>
           </Tab>
         </TabList>
+        <TabPanel>
+          <MyButton />
+        </TabPanel>
         <TabPanel>
           <ReduxAsync />
         </TabPanel>
