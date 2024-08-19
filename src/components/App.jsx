@@ -47,6 +47,7 @@ import { ReduxAsync } from './ReduxAsync/components/ReduxAsync';
 import ContextThemeToggle from './ContextThemeToggle/ContextThemeToggle';
 import Checker from './PasswordStrengthChecker/Checker';
 import MyButton from './MyButton/MyButton';
+import AccordionExample from './Accordion/Accordion';
 
 export const App = () => {
   return (
@@ -55,6 +56,9 @@ export const App = () => {
         <TabList>
           <Tab>
             <h2>Button</h2>
+          </Tab>
+          <Tab>
+            <h2>Accordion</h2>
           </Tab>
           <Tab>
             <h2>ReduxAsync</h2>
@@ -180,6 +184,9 @@ export const App = () => {
         </TabList>
         <TabPanel>
           <MyButton />
+        </TabPanel>
+        <TabPanel>
+          <AccordionExample />
         </TabPanel>
         <TabPanel>
           <ReduxAsync />
