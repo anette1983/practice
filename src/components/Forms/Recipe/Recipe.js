@@ -13,6 +13,7 @@ import {
   Badge,
   Title,
   Actions,
+  RecipeBtn,
 } from './Recipe.styled';
 import { Modal } from '../Modal';
 
@@ -65,12 +66,12 @@ export class Recipe extends Component {
           </RecipeDifficulty>
 
           <Actions>
-            <button onClick={() => onDelete(id)} aria-label="Delete">
+            <RecipeBtn onClick={() => onDelete(id)} aria-label="Delete">
               <HiTrash />
-            </button>
-            <button onClick={this.openModal} aria-label="Zoom">
+            </RecipeBtn>
+            <RecipeBtn onClick={this.openModal} aria-label="Zoom">
               <HiZoomIn />
-            </button>
+            </RecipeBtn>
           </Actions>
         </Meta>
 

@@ -6,10 +6,9 @@ import { ImageSizeContext } from './imageContext';
 export default function App() {
   const [isLarge, setIsLarge] = useState(false);
   const imageSize = isLarge ? 150 : 100;
+  console.log('Current image size:', imageSize);
   return (
-    <ImageSizeContext.Provider
-      value={imageSize}
-    >
+    <ImageSizeContext.Provider value={imageSize}>
       <label>
         <input
           type="checkbox"
@@ -23,15 +22,15 @@ export default function App() {
       <hr />
       <List />
     </ImageSizeContext.Provider>
-  )
+  );
 }
 
 function List() {
-  const listItems = places.map(place =>
+  const listItems = places.map(place => (
     <li key={place.id}>
       <Place place={place} />
     </li>
-  );
+  ));
   return <ul>{listItems}</ul>;
 }
 
@@ -49,6 +48,7 @@ function Place({ place }) {
 
 function PlaceImage({ place }) {
   const imageSize = useContext(ImageSizeContext);
+  console.log('Rendering PlaceImage with size:', imageSize);
   return (
     <img
       src={getImageUrl(place)}

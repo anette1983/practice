@@ -55,7 +55,7 @@
 //     setError("");
 //     const data = new FormData(e.target);
 //     const height = parseFloat(data.get("height")) / 100;
-//     const weight = parseFloat(data.get("weight"));  
+//     const weight = parseFloat(data.get("weight"));
 
 //     if (isNaN(height) || isNaN(weight) || height <= 0 || weight <= 0) {
 //       setError('Please enter valid positive numbers for height and weight');
@@ -71,7 +71,7 @@
 //     <div className="container">
 //       <h2>BMI Calculator</h2>
 //       <h3>Calculate BMI</h3>
-      
+
 //       <form className='form' onSubmit={handleSubmit}>
 //         <label className='form-label'>
 //           Height in cm
@@ -81,21 +81,20 @@
 //           Weight in kg
 //         <input type='number' placeholder="Enter weight" name='weight'/>
 //         </label>
-//       <button>Submit</button>  
+//       <button>Submit</button>
 //       </form>
 //       {BMI !== null && <p>Your BMI is: {BMI}</p>}
-//       {error && <p>{error}</p>} 
+//       {error && <p>{error}</p>}
 //     </div>
 //   );
 // }
-
 
 // useRef - непредсказуемое состояние
 // лучше:
 import React, { useState } from 'react';
 import './CalculateBMI.css';
 
-export default function App() {
+export default function CalculateBMI() {
   const [height, setHeight] = useState('');
   const [weight, setWeight] = useState('');
   const [bmi, setBmi] = useState(null);

@@ -36,7 +36,7 @@ export default function SculptireGalleryM() {
         {showMore ? 'Hide' : 'Show'} details
       </button>
       {showMore && <p>{sculpture.description}</p>}
-      <img src={sculpture.url} alt={sculpture.alt} />
+      <img className="gallery-img" src={sculpture.url} alt={sculpture.alt} />
     </>
   );
 }

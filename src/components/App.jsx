@@ -48,6 +48,8 @@ import ContextThemeToggle from './ContextThemeToggle/ContextThemeToggle';
 import Checker from './PasswordStrengthChecker/Checker';
 import MyButton from './MyButton/MyButton';
 import AccordionExample from './Accordion/Accordion';
+import CalculateBMI from './CalculateBMI/CalculateBMI';
+import PreviousCount from './UsePrevious/UsePrevious';
 
 export const App = () => {
   return (
@@ -83,9 +85,6 @@ export const App = () => {
           </Tab>
           <Tab>
             <h2>Redux</h2>
-          </Tab>
-          <Tab>
-            <h2>Form</h2>
           </Tab>
           <Tab>
             <h2>Checkboxes</h2>
@@ -167,19 +166,28 @@ export const App = () => {
             <h2>Other</h2>
           </Tab>
           <Tab>
-            <h2>Other</h2>
+            <h2>Fetch articles. Class comp.</h2>
           </Tab>
           <Tab>
             <h2>Таймери, вбудовані вирази</h2>
           </Tab>
           <Tab>
-            <h2>Other</h2>
+            <h2>Error Boundary example</h2>
           </Tab>
           <Tab>
             <h2>ContextThemeToggle</h2>
           </Tab>
           <Tab>
             <h2>Password strength check</h2>
+          </Tab>
+          <Tab>
+            <h2>Calculate BMI</h2>
+          </Tab>
+          <Tab>
+            <h2>Previous Count</h2>
+          </Tab>
+          <Tab>
+            <h2>Form</h2>
           </Tab>
         </TabList>
         <TabPanel>
@@ -211,9 +219,6 @@ export const App = () => {
         </TabPanel>
         <TabPanel>
           <Redux />
-        </TabPanel>
-        <TabPanel>
-          <Form />
         </TabPanel>
         <TabPanel>
           <Checkboxes />
@@ -360,6 +365,15 @@ export const App = () => {
         </TabPanel>
         <TabPanel>
           <Checker />
+        </TabPanel>
+        <TabPanel>
+          <CalculateBMI />
+        </TabPanel>
+        <TabPanel>
+          <PreviousCount />
+        </TabPanel>
+        <TabPanel>
+          <Form />
         </TabPanel>
       </Tabs>
     </>

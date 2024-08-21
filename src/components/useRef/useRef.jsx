@@ -41,10 +41,9 @@
 //   );
 // };
 
-
 // Рефи це не стан, тобто вони не реактивні, тому зміна значення рефа не впливає на оновлення компонента і не викликає ре-рендер.
 
-import { useEffect, useRef } from "react";
+import { useEffect, useRef } from 'react';
 
 export const UseRef = () => {
   const valueRef = useRef(0);
@@ -58,6 +57,7 @@ export const UseRef = () => {
 
   const handleClick = () => {
     valueRef.current += 1;
+    console.log(valueRef.current);
   };
 
   return <button onClick={handleClick}>Click to update ref value</button>;

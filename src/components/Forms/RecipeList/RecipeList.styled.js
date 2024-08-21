@@ -6,7 +6,7 @@ export const List = styled.ul`
   gap: 16px;
   list-style: none;
   padding: 0;
-  margin: 0;
+  margin-top: 20px;
 `;
 
 export const ListItem = styled.li`

@@ -83,3 +83,8 @@ export const Actions = styled.div`
   display: flex;
   gap: 4px;
 `;
+
+export const RecipeBtn = styled.button`
+  width: auto;
+  height: auto;
+`;
