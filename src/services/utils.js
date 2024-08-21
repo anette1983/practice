@@ -8,4 +8,4 @@ export const hasUpperCase = /[A-Z]/;
 export const hasLowerCase = /[a-z]/;
 
 // check if password contains at least one special character
-export const hasSpecialCharacters = /[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]/;
+export const hasSpecialCharacters = /[!@#$%^&*()_+\-=[\]{};':"\\|,.<>/?]/;
