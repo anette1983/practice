@@ -11,7 +11,7 @@ const useLocalStorage = (key, initialValue) => {
       // Если есть, парсим его и возвращаем, иначе используем initialValue
       return item ? JSON.parse(item) : initialValue;
     } catch (error) {
-      console.error("Error reading from localStorage", error);
+      console.error('Error reading from localStorage', error);
       return initialValue;
     }
   });
@@ -21,17 +21,24 @@ const useLocalStorage = (key, initialValue) => {
     try {
       localStorage.setItem(key, JSON.stringify(storedValue));
     } catch (error) {
-      console.error("Error saving to localStorage", error);
+      console.error('Error saving to localStorage', error);
     }
   }, [key, storedValue]);
 
   return [storedValue, setStoredValue];
-
 };
 
 const App = () => {
-    const [name, setName] = useLocalStorage('name', '');
-    // onchange будет устанавливать новое велью в хуке и запускать юзэффект
+  // без хука
+  // const [name, setName] = useState(() => localStorage.getItem('name') || '');
+  const [name, setName] = useLocalStorage('name', '');
+  // onchange будет устанавливать новое велью в хуке и запускать юзэффект
+
+  // без хука:
+  //   useEffect(() => {
+  //   try {
+  //     localStorage.setItem('name', JSON.stringify(name));
+  // }, [name]);
 
   return (
     <div>
@@ -39,7 +46,7 @@ const App = () => {
       <input
         type="text"
         value={name}
-        onChange={(e) => setName(e.target.value)}
+        onChange={e => setName(e.target.value)}
         placeholder="Enter your name"
       />
       <p>Name in localStorage: {name}</p>
