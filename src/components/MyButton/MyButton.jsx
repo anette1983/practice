@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import FirstButton from './FirstButton';
 import SecondButton from './SecondButton';
 import ClassButton from './ClassButton';
+import BirdSound from 'components/BirdSound/BirdSound';
 
 export default function MyButton() {
   const [count, setCount] = useState(0);
@@ -16,6 +17,7 @@ export default function MyButton() {
         <FirstButton count={count} handleClick={handleClick} />
         <SecondButton count={count} handleClick={handleClick} />
         <ClassButton />
+        <BirdSound />
       </hgroup>
     </>
   );
