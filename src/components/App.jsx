@@ -50,6 +50,7 @@ import MyButton from './MyButton/MyButton';
 import AccordionExample from './Accordion/Accordion';
 import CalculateBMI from './CalculateBMI/CalculateBMI';
 import PreviousCount from './UsePrevious/UsePrevious';
+import Calc from './Calculator/Calc';
 
 export const App = () => {
   return (
@@ -188,6 +189,9 @@ export const App = () => {
           </Tab>
           <Tab>
             <h2>Form</h2>
+          </Tab>
+          <Tab>
+            <h2>Calculator</h2>
           </Tab>
         </TabList>
         <TabPanel>
@@ -374,6 +378,9 @@ export const App = () => {
         </TabPanel>
         <TabPanel>
           <Form />
+        </TabPanel>
+        <TabPanel>
+          <Calc />
         </TabPanel>
       </Tabs>
     </>
