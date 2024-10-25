@@ -1,5 +1,7 @@
 import { useState, useRef } from 'react';
 import './Calc.css';
+import LazyImage from 'components/LazyImage/LazyImage';
+import Image from '../../assets/gh-actions-perm-1.png';
 
 function Calc() {
   const inputRef = useRef(null);
@@ -61,6 +63,8 @@ function Calc() {
         <button onClick={resetInput}>reset input</button>
         <button onClick={resetResult}>reset result</button>
       </form>
+      <LazyImage src={Image} alt="lazy-load example" />
+      <LazyImage src={Image} alt="lazy-load example" />
     </div>
   );
 }
